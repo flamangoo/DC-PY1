@@ -5,8 +5,7 @@ increase = 0.05  # также можно положить increase = 1.05, чт�
 month = 0  # количество месяцев, которое можно прожить
 
 while money_capital >= spend:
-    money_capital -= spend  # или money_capital -= spend - salary без 9 строки
-    money_capital += salary
+    money_capital += salary - spend
     spend = spend + spend * increase
     month += 1
 
