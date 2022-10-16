@@ -5,10 +5,8 @@ increase = 0.03  # рост цен
 
 need_money = 0  # количество денег, чтобы прожить 10 месяцев
 
-while True:
-    if months == 0:
-        break
-    need_money += (spend - salary)
+while months != 0:
+    need_money += spend - salary
     spend = spend + spend * increase
     months -= 1
 
