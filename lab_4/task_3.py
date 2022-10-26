@@ -1,10 +1,7 @@
-def delete(list_, index=None):
-    if index is None:
-        index = len(list_)
-    if index == len(list_):
-        f_delete = list_[:index - 1]
-    else:
-        f_delete = list_[:index] + list_[index + 1:]
+def delete(list_, index=-1):  # удалется последний элемент по умолчанию, если index=-1
+    if index < 0:
+        index = len(list_) + index  # переопределение для отрицательного индекса
+    f_delete = list_[:index] + list_[index + 1:]  # общий случай
 
     return f_delete
 
