@@ -1,22 +1,24 @@
+from math import fsum  # используем функцию fsum для уменьшения потери точности во время суммирования
+
+
 def get_count_char(str_):  # функция принимает строку
     str_ = str_.lower()
-    default_count = 0
     char_dictionary = {}
     for char in str_:
         if char.isalpha():
-            char_dictionary[char] = char_dictionary.get(char, default_count) + 1
+            char_dictionary[char] = char_dictionary.get(char, 0) + 1
 
     return char_dictionary
 
 
 def get_percents(char_dictionary):  # функция принимает словарь символов
     sum_of_values = sum(char_dictionary.values())
-    dictionary_with_percents = {}
+    percents = {}
     for char in char_dictionary:
-        dictionary_with_percents[char] = round(char_dictionary[char] / sum_of_values * 100, 2)
-    #  print(sum(dictionary_with_percents.values()))
+        percents[char] = char_dictionary[char] / sum_of_values * 100  # без округления, чтобы получить наиболее точное значение
+    print(fsum(percents.values()))  # fsum отследит потерянные цифры в промежуточном итоге
 
-    return dictionary_with_percents
+    return percents
 
 
 main_str = """
