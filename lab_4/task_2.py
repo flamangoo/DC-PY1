@@ -13,7 +13,7 @@ def get_percents(char_dictionary):  # функция принимает слов
     percents = {}
     for char in char_dictionary:
         percents[char] = char_dictionary[char] / sum_of_values * 100
-        error = 100 - sum(percents.values())  # нахождение отклонения от 100%
+    error = 100 - sum(percents.values())  # нахождение отклонения от 100%
     percents.update({'err': error})  # добавим ошибку как дополнительный ключ
     # print(sum(percents.values()))
     # print(error)
