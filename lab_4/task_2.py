@@ -1,6 +1,3 @@
-from math import fsum  # используем метод fsum для уменьшения потери точности во время суммирования
-
-
 def get_count_char(str_):  # функция принимает строку
     str_ = str_.lower()
     char_dictionary = {}
@@ -15,8 +12,11 @@ def get_percents(char_dictionary):  # функция принимает слов
     sum_of_values = sum(char_dictionary.values())
     percents = {}
     for char in char_dictionary:
-        percents[char] = char_dictionary[char] / sum_of_values * 100  # без округления, чтобы получить наиболее точное значение
-    print(fsum(percents.values()))  # fsum отследит потерянные цифры в промежуточном итоге
+        percents[char] = char_dictionary[char] / sum_of_values * 100
+        error = 100 - sum(percents.values())  # нахождение отклонения от 100%
+    percents.update({'err': error})  # добавим ошибку как дополнительный ключ
+    # print(sum(percents.values()))
+    # print(error)
 
     return percents
 
