@@ -14,4 +14,3 @@ def get_unique_list_numbers(start: int = -10, end: int = 10, length: int = 15) -
 list_unique_numbers = get_unique_list_numbers()
 print(list_unique_numbers)
 print(len(list_unique_numbers) == len(set(list_unique_numbers)))
-
