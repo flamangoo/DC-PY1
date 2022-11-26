@@ -7,8 +7,7 @@ def to_csv_file(filename, headers, rows, delimiter=',', new_line='\n'):
         file.write(new_line)
 
         for row in rows:
-            file.write(delimiter.join(row))
-            file.write(new_line)
+            file.write(delimiter.join(row) + new_line)
 
 
 headers_list = ['longitude', 'latitude', 'housing_median_age', 'total_rooms', 'total_bedrooms', 'population', 'households', 'median_income', 'median_house_value']
