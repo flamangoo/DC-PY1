@@ -1,7 +1,7 @@
 INPUT_FILE = 'input.csv'
 OUTPUT_FILE = 'output.json'
 
-indent = '    '
+indent = 4 * ' '
 
 
 def csv_to_list_dict(input_file, new_line='\n', delimiter=',') -> list[dict]:
