@@ -1,5 +1,5 @@
 INPUT_FILE = 'input.csv'
-OUTPUT_FILE = 'output_json'
+OUTPUT_FILE = 'output.json'
 
 indent = '    '
 
