@@ -14,7 +14,7 @@ def csv_to_list_dict(input_file, new_line='\n', delimiter=',') -> list[dict]:
 
 # save dict as json record
 def converter_csv_to_json(input_file, output_file, new_line='\n', delimiter=','):
-    with open('output.json', 'w', encoding='utf-8') as serial:
+    with open(output_file, 'w', encoding='utf-8') as serial:
         serial.write('[' + new_line)
         is_first_row = True  # flag
         for record in csv_to_list_dict(input_file):
